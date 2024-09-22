@@ -2,13 +2,13 @@
 {
     enum Cor
     {
+
         Branca,
         Preta,
-        Amarelo,
+        Amarela,
         Azul,
         Vermelha,
         Verde,
-        Laranja,
-        Roxo
+        Laranja
     }
 }

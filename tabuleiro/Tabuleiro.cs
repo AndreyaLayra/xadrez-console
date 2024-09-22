@@ -2,15 +2,16 @@
 {
     class Tabuleiro
     {
-        public int Linhas {  get; set; }
-        public int Colunas { get; set; }
+
+        public int linhas { get; set; }
+        public int colunas { get; set; }
         private Peca[,] pecas;
 
         public Tabuleiro(int linhas, int colunas)
         {
-            this.Linhas = linhas;
-            this.Colunas = colunas;
-            pecas = new Peca[ linhas, colunas ];
+            this.linhas = linhas;
+            this.colunas = colunas;
+            pecas = new Peca[linhas, colunas];
         }
 
         public Peca peca(int linha, int coluna)
@@ -41,7 +42,7 @@
 
         public Peca retirarPeca(Posicao pos)
         {
-            if(peca(pos) == null)
+            if (peca(pos) == null)
             {
                 return null;
             }
@@ -53,7 +54,7 @@
 
         public bool posicaoValida(Posicao pos)
         {
-            if(pos.linha < 0 || pos.linha > Linhas || pos.coluna < 0 || pos.coluna > Colunas)
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
             {
                 return false;
             }
@@ -62,9 +63,9 @@
 
         public void validarPosicao(Posicao pos)
         {
-            if(!posicaoValida(pos))
+            if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posicao inválida!");
+                throw new TabuleiroException("Posição inválida!");
             }
         }
     }
